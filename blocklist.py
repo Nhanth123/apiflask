@@ -6,4 +6,4 @@ app and the logout resource so that tokens can be added to the blacklist when th
 user logs out.
 """
 
-BLACKLIST = set()
+BLOCKLIST = set()

@@ -23,7 +23,7 @@ class Item(MethodView):
         jwt = get_jwt()
         if not jwt.get("is_admin"):
             abort(401, message="Admin privilege required.")
-
+            
         item = ItemModel.query.get_or_404(item_id)
         db.session.delete(item)
         db.session.commit()
@@ -38,7 +38,7 @@ class Item(MethodView):
             item.name = item_data["name"]
         else:
             item = ItemModel(id=item_id, **item_data)
-
+        
         db.session.add(item)
         db.session.commit()
 

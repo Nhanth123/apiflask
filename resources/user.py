@@ -1,14 +1,12 @@
-import os
-import requests
 from flask import current_app
 from flask.views import MethodView
+from flask_jwt_extended import create_access_token, create_refresh_token, get_jwt_identity, jwt_required, get_jwt
 from flask_smorest import Blueprint, abort
 from passlib.hash import pbkdf2_sha256
-from flask_jwt_extended import create_access_token, create_refresh_token, get_jwt_identity, jwt_required, get_jwt
 from sqlalchemy import or_
 
-from db import db
 from blocklist import BLOCKLIST
+from db import db
 from models import UserModel
 from schemas import UserSchema, UserRegisterSchema
 from tasks import send_user_registration_email

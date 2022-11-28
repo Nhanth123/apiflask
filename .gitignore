@@ -6,3 +6,4 @@ data.db
 *.pyc
 .DS_Store
 .idea
+/.env
